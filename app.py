@@ -1,21 +1,13 @@
-from flask import Flask, jsonify
+from flask import Flask
 
+from blueprint_movies.views import blueprint_movies
 from config import NAME_DB
 from daoDB import NetflixDAO
 
+
 app = Flask(__name__)
 Database = NetflixDAO(NAME_DB)
-
-
-@app.route('/')
-def index():
-    return jsonify(Database.movies())
-
-
-@app.route('/movie/<string:title>')
-def movie_by_title(title: str):
-    return jsonify(Database.movie_tit(title))
-
+app.register_blueprint(blueprint_movies)
 
 if __name__ == '__main__':
     app.run(debug=True)

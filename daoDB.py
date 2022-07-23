@@ -18,12 +18,12 @@ class NetflixDAO:
         result = cursor.execute(query)
         return result.fetchall()
 
-    def movie_tit(self, tit: str) -> list:
+    def movie_by_name(self, name: str) -> list:
         query = f"""
-        SELECT title, director 
+        SELECT title, country, release_year, listed_in, description
         FROM 'netflix'
         WHERE title LIKE :substring;
         """
         cursor = self._database_connection(self.nameDB)
-        result = cursor.execute(query, {'substring': f'%{tit}%'})
+        result = cursor.execute(query, {'substring': f'%{name}%'})
         return result.fetchall()
