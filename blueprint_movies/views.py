@@ -1,7 +1,9 @@
 from flask import jsonify, Blueprint
 
-from app import Database
+from blueprint_movies.DAO.daoDB import NetflixDAO
+from config import NAME_DB
 
+Database = NetflixDAO(NAME_DB)
 blueprint_movies = Blueprint("blueprint_movies", __name__)
 
 
