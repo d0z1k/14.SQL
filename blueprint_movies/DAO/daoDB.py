@@ -21,7 +21,7 @@ class NetflixDAO:
 
     def movie_by_name(self, name: str) -> list:
         query = f"""
-        SELECT title, country, release_year, listed_in, description
+        SELECT title, country, MAX(release_year), listed_in, description
         FROM 'netflix'
         WHERE title LIKE :substring;
         """
@@ -33,11 +33,15 @@ class NetflixDAO:
         query = f"""
         SELECT title, release_year
         FROM 'netflix'
-        WHERE 'release_year' > {release_year1} AND 'release_year' < {release_year2}
+        WHERE release_year
+        BETWEEN {release_year1} AND {release_year2}
+        LIMIT 100
         """
 
         cursor = self._database_connection(self.nameDB)
         result = cursor.execute(query)
         return result.fetchall()
 
-        #pprint(movie_by_name('Family'))
+
+    # pprint(movie_by_release_year_range(2009, 2019))
+    #pprint(NetflixDAO(movie_by_name('Alive')))
