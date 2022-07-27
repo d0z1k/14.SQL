@@ -1,3 +1,5 @@
+import string
+
 from flask import jsonify, Blueprint
 
 from blueprint_movies.DAO.daoDB import NetflixDAO
@@ -21,3 +23,7 @@ def movie_by_title(name: str):
 def movie_by_year(year1: int, year2: int):
     return jsonify(Database.movie_by_release_year_range(year1, year2))
 
+
+# @blueprint_movies.route('/movie/children')
+# def movie_by_rating():
+#     return jsonify(Database.movie_by_rating(G))
