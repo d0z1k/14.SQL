@@ -31,9 +31,11 @@ class NetflixDAO:
 
     def movie_by_name(self, name: str):
         query = f"""
-        SELECT title, country, MAX(release_year), listed_in, description
+        SELECT title, country, release_year, listed_in, description
         FROM 'netflix'
         WHERE title LIKE '%{name}%'
+        ORDER BY release_year DESC
+        LIMIT 1
         """
 
         result = self.db_execute(query).fetchall()
@@ -60,6 +62,7 @@ class NetflixDAO:
                 SELECT title, rating, release_year
                 FROM 'netflix'
                 WHERE rating IN {ratings}
+                ORDER BY release_year DESC
                 LIMIT 100
                 """
 
@@ -69,4 +72,17 @@ class NetflixDAO:
             movie_list.append(dict(item))
         return movie_list
 
+    def movie_by_genre(self, genre: str):
+        query = f"""
+                SELECT title, description
+                FROM 'netflix'
+                WHERE listed_in LIKE '%{genre}%'
+                ORDER BY release_year DESC
+                LIMIT 10
+                """
 
+        movie_list = []
+        result = self.db_execute(query).fetchall()
+        for item in result:
+            movie_list.append(dict(item))
+        return movie_list

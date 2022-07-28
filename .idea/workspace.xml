@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98afb783-a789-403e-8cc7-a677914060f6" name="Changes" comment="bp working&#10;years range working&#10;dict working">
+    <list default="true" id="98afb783-a789-403e-8cc7-a677914060f6" name="Changes" comment="bp working&#10;years range working&#10;dict working&#10;rating working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blueprint_movies/DAO/daoDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/blueprint_movies/DAO/daoDB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blueprint_movies/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blueprint_movies/views.py" afterDir="false" />
@@ -184,7 +184,7 @@
       <workItem from="1658819243730" duration="597000" />
       <workItem from="1658935422452" duration="7297000" />
       <workItem from="1658946834014" duration="6830000" />
-      <workItem from="1658986872982" duration="1434000" />
+      <workItem from="1658986872982" duration="2620000" />
     </task>
     <task id="LOCAL-00001" summary="bp">
       <created>1658566413942</created>
@@ -214,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658951996263</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="bp working&#10;years range working&#10;dict working&#10;rating working">
+      <created>1658988546566</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1658988546566</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,11 +243,12 @@
     <MESSAGE value="bp working" />
     <MESSAGE value="bp working&#10;years range working" />
     <MESSAGE value="bp working&#10;years range working&#10;dict working" />
-    <option name="LAST_COMMIT_MESSAGE" value="bp working&#10;years range working&#10;dict working" />
+    <MESSAGE value="bp working&#10;years range working&#10;dict working&#10;rating working" />
+    <option name="LAST_COMMIT_MESSAGE" value="bp working&#10;years range working&#10;dict working&#10;rating working" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PycharmProjects$app.coverage" NAME="app Coverage Results" MODIFIED="1658476296788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/14_SQL$app.coverage" NAME="app Coverage Results" MODIFIED="1658988147133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/14_SQL$app.coverage" NAME="app Coverage Results" MODIFIED="1658989512502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/14_SQL$daoDB.coverage" NAME="daoDB Coverage Results" MODIFIED="1658940453445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/blueprint_movies/DAO" />
     <SUITE FILE_PATH="coverage/14__SQL_$main.coverage" NAME="main Coverage Results" MODIFIED="1658310694085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PycharmProjects$main.coverage" NAME="main Coverage Results" MODIFIED="1658474496587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

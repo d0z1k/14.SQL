@@ -35,3 +35,8 @@ def movie_by_rating_family():
 @blueprint_movies.route('/movie/adult')
 def movie_by_rating_adult():
     return jsonify(Database.movie_by_rating('R', 'NC-17'))
+
+
+@blueprint_movies.route('/movie/genre/<string:genre>')
+def movie_by_genre(genre: str):
+    return jsonify(Database.movie_by_genre(genre))
