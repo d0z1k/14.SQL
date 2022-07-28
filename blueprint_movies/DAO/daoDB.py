@@ -1,5 +1,5 @@
 import sqlite3
-import pprint
+import pprint as pp
 
 
 class NetflixDAO:
@@ -7,7 +7,8 @@ class NetflixDAO:
         self.nameDB = nameDB
 
     # Database connection settings
-    def _database_connection(self, name):
+    @staticmethod
+    def _database_connection(name):
         with sqlite3.connect(name) as connection:
             connection.row_factory = sqlite3.Row
             cursor = connection.cursor()
@@ -18,13 +19,15 @@ class NetflixDAO:
         result = cursor.execute(query)
         return result
 
-
     def movies(self) -> list:
-        query = f"""SELECT * FROM 'netflix'
+        query = f"""SELECT * 
+        FROM 'netflix'
         """
-        cursor = self._database_connection(self.nameDB)
-        result = cursor.execute(query)
-        return result.fetchall()
+        movie_list = []
+        result = self.db_execute(query).fetchall()
+        for item in result:
+            movie_list.append(dict(item))
+        return movie_list
 
     def movie_by_name(self, name: str):
         query = f"""
@@ -52,17 +55,18 @@ class NetflixDAO:
             movie_list.append(dict(item))
         return movie_list
 
-    # def movie_by_rating(self, rate) -> list:
-    #     query = f"""
-    #             SELECT title, rating, release_year
-    #             FROM 'netflix'
-    #             WHERE rating IN {rate}
-    #             LIMIT 100
-    #             """
-    #
-    #     cursor = self._database_connection(self.nameDB)
-    #     result = cursor.execute(query)
-    #     return result.fetchall()
+    def movie_by_rating(self, *ratings) -> list:
+        query = f"""
+                SELECT title, rating, release_year
+                FROM 'netflix'
+                WHERE rating IN {ratings}
+                LIMIT 100
+                """
 
-    # pprint(movie_by_release_year_range(2009, 2019))
-    # pprint(NetflixDAO(movie_by_name('Alive')))
+        movie_list = []
+        result = self.db_execute(query).fetchall()
+        for item in result:
+            movie_list.append(dict(item))
+        return movie_list
+
+
