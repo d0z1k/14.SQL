@@ -125,7 +125,7 @@ class NetflixDAO:
             actors = movie[0].split(", ")
             actors_all.extend(actors)
         # Оставляем тех, кто встречается дважды
-        actors_seen_twice = {actor for actor in actors_all if actors_all.count(actor) > 2} - {name1, name2}
+        actors_seen_twice = {actor for actor in actors_all if actors_all.count(actor) > 2} - {actor_1, actor_2}
         print(actors_seen_twice)
 
 
